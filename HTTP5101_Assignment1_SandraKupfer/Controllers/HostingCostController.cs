@@ -22,8 +22,14 @@ namespace HTTP5101_Assignment1_SandraKupfer.Controllers
 
         private readonly string[] hostingCostStrings = new string[3];
 
-        // GET http://localhost/api/HostingCost/{id}
-        public string[] Get( int id )
+        /// <summary>
+        /// Assignment 1.bonus
+        /// GET http://localhost/api/HostingCost/{id}
+        /// Calculates the hosting cost for the input number of days and return a string summarizing the cost.
+        /// </summary>
+        /// <param name="id">Number of nights hosted.</param>
+        /// <returns>Three strings that describe the base hosting cost, tax, and total.</returns>
+        public IEnumerable<string> Get( int id )
         {
             int numFortnights = id / 14;
             decimal subTotal = numFortnights * baseCost + baseCost;
